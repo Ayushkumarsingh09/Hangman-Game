@@ -1,0 +1,39 @@
+# Trexquant Hangman Challenge
+Subject: Code Explanation and Method Utilization
+Submitted By: Ayush Kumar Singh
+
+This section pertains to a word-guessing game or a similar application. Let's delve into the approach:
+
+1. Constructing n-word dictionary:
+   - The `build_n_word_dictionary` method generates a dictionary (`n_word_dict`) where keys represent word lengths (ranging from 3 to 29), and values are lists of substrings of that length extracted from the given `word_list`.
+   - It iterates through each word in `word_list` and generates all feasible substrings with lengths spanning from 3 to 29.
+
+2. Identifying Maximum Word Length:
+   - The `find_max_length` method determines the maximum length of words within the specified `word_list`.
+
+3. Building a Dictionary from a File:
+   - The `build_dictionary` method reads the contents of a dictionary file and returns them as a list.
+
+4. Vowel Counting in a Word:
+   - The `vowel_count` method computes the ratio of vowels to the total number of characters in a given word.
+
+5. Frequency Counting Functions:
+   - The `func` and `func2` methods appear to focus on counting the frequency of letters in a list of words (`new_dictionary`).
+   - `func` utilizes the Counter class to tally letter frequencies across all words.
+   - `func2` narrows down the dictionary to words matching a given pattern (`clean_word`) and then employs `func` to calculate letter frequencies.
+
+6. Letter Guessing:
+   - The `guess` method, given a word and the n-word dictionary, attempts to guess a letter.
+   - It initially filters the current dictionary based on the length and pattern of the guessed word.
+   - The method prioritizes letter guesses based on frequency and specific conditions (e.g., vowel count) and updates the guessed letters accordingly.
+
+7. Fallback Strategies:
+   - If the initial guesses yield no suitable letters, the code employs additional strategies.
+   - It explores substrings of the guessed word, seeking common letters in those substrings.
+   - As a last resort, if all else fails, it falls back to a default ordering of letters.
+
+8. Updating Guessed Letters:
+   - The guessed letter is appended to the list of already guessed letters (`self.guessed_letters`).
+   - The method then returns the guessed letter.
+
+This constitutes a segment of a broader application, likely intended for a word-guessing game, possibly a hangman-type game. The strategy involves progressively narrowing down potential letters based on the word's length and pattern, coupled with the frequency of letters in the dictionary.
